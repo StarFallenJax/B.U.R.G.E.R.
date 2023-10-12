@@ -1,2 +1,3 @@
 # B.U.R.G.E.R.
-Enter The Gungeon Mod
+### An Enter the Gungeon mod
+Adds the beautifully hand-crafted B.U.R.G.E.R. prototype shield. Grants one armor on pick-up, and one additional armor every floor. Currently a B-tier drop.
