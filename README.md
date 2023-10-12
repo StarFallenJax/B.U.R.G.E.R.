@@ -8,7 +8,15 @@ Adds the beautifully hand-crafted B.U.R.G.E.R. prototype shield. Grants one armo
 
 ![Burger pickup](https://github.com/StarFallenJax/B.U.R.G.E.R./assets/93849152/e716a2d7-41a5-4041-87aa-4920e2566c7f)
 
-Currently version 1.0.1
+### Changelog
+**Version 1.0.2**
+* Cleaned up the README.MD and made an opensource GitHub page
+
+**Version 1.0.1**
+* Fixed off-center icon on the mod page
+
+**Version 1.0.0**
+* Added B.U.R.G.E.R. shield and created basic mod structure
 
 ### To-do
 * Synergies
