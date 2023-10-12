@@ -1,9 +1,0 @@
-{
-    "name": "BURGER",
-    "version_number": "1.0.1",
-    "website_url": "https://github.com/StarFallenJax/B.U.R.G.E.R.",
-    "description": "Adds the beautifully hand-crafted B.U.R.G.E.R. prototype shield. Grants one armor on pick-up, and one additional armor every floor. Currently a B-tier drop. Expect this to be updated sometime in the near future.",
-    "dependencies": [
-        "BepInEx-BepInExPack_EtG-5.4.2101","Alexandria-Alexandria-0.3.23"
-    ]
-}
