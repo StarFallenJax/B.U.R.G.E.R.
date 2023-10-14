@@ -1,4 +1,4 @@
-﻿using Alexandria.ItemAPI;
+using Alexandria.ItemAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace Burger
             ItemBuilder.AddSpriteToObject(itemName, resourceName, obj);
 
             string shortDesc = "Extra Crispy";
-            string longDesc = "The Gundead find these fries absolutely delicious! May cause cancer.";
+            string longDesc = "The Gundead find these fries absolutely delicious!\n\n" + "May cause cancer.";
 
             ItemBuilder.SetupItem(item, shortDesc, longDesc, "bur");
             item.quality = PickupObject.ItemQuality.C;
@@ -86,9 +86,17 @@ namespace Burger
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
+            Module.Log($"Player picked up Friguon successfully");
+            if (player.PlayerHasActiveSynergy("Combo Meal"))
+            {
+                Module.Log($"Combo Meal synergy successfully applied");
+                player.healthHaver.maximumHealth += 1;
+                player.healthHaver.ApplyHealing(1f);
+            }
         }
         public override DebrisObject Drop(PlayerController player)
         {
+            Module.Log($"Player dropped Friguon successfully");
             return base.Drop(player);
         }
         public override void OnDestroy()
