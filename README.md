@@ -18,8 +18,11 @@ Adds a new synergy
 Console Prefix is `bur`
 
 ### Changelog
+**Version 1.2.1**
+* Fixed crash that occurred when trying to take away shield that the player no longer had
+
 **Version 1.2.0**
-* Added Combo Meal synergy between Friguon and B.U.R.G.E.R. Gives 1 extra heart.
+* Added Combo Meal synergy between Friguon and B.U.R.G.E.R. Gives 1 extra heart
 
 **Version 1.1.0**
 * Added Friguon
@@ -35,7 +38,7 @@ Console Prefix is `bur`
 
 ### To-do
 * Maybe more synergies
-* Maybe more items
+* Fast food related gun
 * Final polishing
 
 ![image](https://github.com/StarFallenJax/B.U.R.G.E.R./assets/93849152/e36947c4-768f-47c1-bf7f-66ac117335f1)
