@@ -10,9 +10,15 @@ Adds the beautifully hand-crafted B.U.R.G.E.R. prototype shield.
 Adds a small order of Friguons.
 * Imagine fries, but they circled around you and are 100x more awesome (They block bullets)
 
+Adds a new synergy
+* Can I get, uh... a number 9 large...
+
 ![Burger pickup](https://github.com/StarFallenJax/B.U.R.G.E.R./assets/93849152/e716a2d7-41a5-4041-87aa-4920e2566c7f)
 
 ### Changelog
+**Version 1.2.0**
+* Added Combo Meal synergy between Friguon and B.U.R.G.E.R. Gives 1 extra heart.
+
 **Version 1.1.0**
 * Added Friguon
 
