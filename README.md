@@ -15,6 +15,8 @@ Adds a new synergy
 
 ![Burger pickup](https://github.com/StarFallenJax/B.U.R.G.E.R./assets/93849152/e716a2d7-41a5-4041-87aa-4920e2566c7f)
 
+Console Prefix is `bur`
+
 ### Changelog
 **Version 1.2.0**
 * Added Combo Meal synergy between Friguon and B.U.R.G.E.R. Gives 1 extra heart.
@@ -32,7 +34,7 @@ Adds a new synergy
 * Added B.U.R.G.E.R. shield and created basic mod structure
 
 ### To-do
-* Synergies
+* Maybe more synergies
 * Maybe more items
 * Final polishing
 
