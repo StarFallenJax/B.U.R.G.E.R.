@@ -51,7 +51,6 @@ namespace Burger
 
         }
 
-
         //Keep track of how many times the player has entered a new chamber or picked up the item
         public override void Pickup(PlayerController player)
         {
@@ -59,6 +58,13 @@ namespace Burger
             player.healthHaver.Armor += shieldOnPickup;
             Module.Log($"Player picked up B.U.R.G.E.R. successfully");
             player.OnNewFloorLoaded += NewFloorLoaded;
+
+            if (player.PlayerHasActiveSynergy("Combo Meal"))
+            {
+                Module.Log($"Combo Meal synergy successfully applied");
+                player.healthHaver.maximumHealth += 1;
+                player.healthHaver.ApplyHealing(1f);
+            }
 
         }
 
@@ -100,24 +106,9 @@ namespace Burger
                 "bur:b.u.r.g.e.r.",
                 "bur:friguon",
             };
-            List<string> optionalConsoleIDs = new List<string>
-            {
-                "",
-            };
+            List<string> optionalConsoleIDs = new List<string>();
             CustomSynergies.Add("Combo Meal", mandatoryConsoleIDs, optionalConsoleIDs, true);
 
-
-        }
-
-        public void GotSynergy(PlayerController player)
-        {
-
-            if (player.PlayerHasActiveSynergy("Combo Meal"))
-            {
-                player.healthHaver.maximumHealth += 1;
-
-                Module.Log($"Combo Meal synergy successfully applied");
-            }
         }
 
     }
