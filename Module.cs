@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using Alexandria;
 using Alexandria.ItemAPI;
 using System;
@@ -16,7 +16,7 @@ namespace Burger
     {
         public const string GUID = "starfallenjax.etg.burger";
         public const string NAME = "B.U.R.G.E.R.";
-        public const string VERSION = "1.0.0";
+        public const string VERSION = "1.2.0";
         public const string TEXT_COLOR = "#00FFFF";
 
         public void Start()
@@ -27,6 +27,8 @@ namespace Burger
         public void GMStart(GameManager g)
         {
             Burger.Register();
+            BurgerGuon.Init();
+            Burger.SynergyList();
             Log($"{NAME} v{VERSION} started successfully.", TEXT_COLOR);
         }
 
