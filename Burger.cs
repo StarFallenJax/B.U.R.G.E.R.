@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,22 +46,28 @@ namespace Burger
             //Set the rarity of the item
             item.quality = PickupObject.ItemQuality.B;
 
+
+            Module.Log($"B.U.R.G.E.R. mod successfully started");
+
         }
 
+
+        //Keep track of how many times the player has entered a new chamber or picked up the item
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
             player.healthHaver.Armor += shieldOnPickup;
-            Module.Log($"Player picked up {DisplayName}");
+            Module.Log($"Player picked up B.U.R.G.E.R. successfully");
             player.OnNewFloorLoaded += NewFloorLoaded;
 
         }
 
         public override void DisableEffect(PlayerController player)
         {
-            Module.Log($"Player dropped or got rid of B.U.R.G.E.R.");
+            Module.Log($"Player dropped or got rid of B.U.R.G.E.R. successfully");
         }
         
+        //Keep track of how many times the player has dropped the item
         public override DebrisObject Drop(PlayerController player)
         {
             player.OnNewFloorLoaded -= this.NewFloorLoaded;
@@ -84,6 +90,34 @@ namespace Burger
                 half_toggle = true;
             }
           
+        }
+
+        public static void SynergyList()
+        {
+            //Set the required items for the synergy
+            List<string> mandatoryConsoleIDs = new List<string>
+            {
+                "bur:b.u.r.g.e.r.",
+                "bur:friguon",
+            };
+            List<string> optionalConsoleIDs = new List<string>
+            {
+                "",
+            };
+            CustomSynergies.Add("Combo Meal", mandatoryConsoleIDs, optionalConsoleIDs, true);
+
+
+        }
+
+        public void GotSynergy(PlayerController player)
+        {
+
+            if (player.PlayerHasActiveSynergy("Combo Meal"))
+            {
+                player.healthHaver.maximumHealth += 1;
+
+                Module.Log($"Combo Meal synergy successfully applied");
+            }
         }
 
     }
