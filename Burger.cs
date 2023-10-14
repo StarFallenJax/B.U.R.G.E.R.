@@ -9,9 +9,10 @@ namespace Burger
 {
     public class Burger : PassiveItem
     {
-        int shieldOnPickup = 1;
+        int shieldOnPickupTotal = 0;
         int shieldOnFloorCleared = 1;
         int shieldOnFloorClearedTotal = 0;
+        int stopCrash = 0;
         //Call this method from the Start() method of your ETGModule extension
         public static void Register()
         {
@@ -55,7 +56,8 @@ namespace Burger
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
-            player.healthHaver.Armor += shieldOnPickup;
+            shieldOnPickupTotal += 1;
+            player.healthHaver.Armor += 1;
             Module.Log($"Player picked up B.U.R.G.E.R. successfully");
             player.OnNewFloorLoaded += NewFloorLoaded;
 
@@ -77,8 +79,15 @@ namespace Burger
         public override DebrisObject Drop(PlayerController player)
         {
             player.OnNewFloorLoaded -= this.NewFloorLoaded;
-            player.healthHaver.Armor -= shieldOnPickup;
-            player.healthHaver.Armor -= shieldOnFloorClearedTotal;
+            if(player.healthHaver.Armor > 0)
+            {
+                player.healthHaver.Armor -= 1;
+                shieldOnPickupTotal -= 1;
+            }
+            if(player.healthHaver.Armor >= shieldOnFloorClearedTotal)
+            {
+                player.healthHaver.Armor -= shieldOnFloorClearedTotal;
+            }
             return base.Drop(player);
         }
 
@@ -90,6 +99,7 @@ namespace Burger
                 player.healthHaver.Armor += shieldOnFloorCleared;
                 half_toggle = false;
                 shieldOnFloorClearedTotal++;
+                stopCrash += 1;
             }
             else
             {
