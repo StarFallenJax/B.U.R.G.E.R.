@@ -16,7 +16,7 @@ namespace Burger
     {
         public const string GUID = "starfallenjax.etg.burger";
         public const string NAME = "B.U.R.G.E.R.";
-        public const string VERSION = "1.2.0";
+        public const string VERSION = "1.3.0";
         public const string TEXT_COLOR = "#00FFFF";
 
         public void Start()
@@ -29,6 +29,7 @@ namespace Burger
             Burger.Register();
             BurgerGuon.Init();
             Burger.SynergyList();
+            Milkshake.Register();
             Log($"{NAME} v{VERSION} started successfully.", TEXT_COLOR);
         }
 
