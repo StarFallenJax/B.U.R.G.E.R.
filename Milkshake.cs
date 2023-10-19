@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +25,8 @@ namespace Burger
         private GameObject instanceVFX;
 
         private PlayerController m_player;
+
+        private string rageVFX = "Burger/Resources/rage_face_vfx_out";
 
         //Call this method from the Start() method of your ETGModule extension
         public static void Register()
@@ -101,7 +103,7 @@ namespace Burger
                 m_player.baseFlatColorOverride = flatColorOverride.WithAlpha(Mathf.Lerp(flatColorOverride.a, 0f, Mathf.Clamp01(m_elapsed - (Duration - 1f))));
                 if ((bool)instanceVFX && m_elapsed > 1f)
                 {
-                    instanceVFX.GetComponent<tk2dSpriteAnimator>().PlayAndDestroyObject("rage_face_vfx_out");
+                    instanceVFX.GetComponent<tk2dSpriteAnimator>().PlayAndDestroyObject(rageVFX);
                     instanceVFX = null;
                 }
                 if (GameManager.Options.ShaderQuality != 0 && GameManager.Options.ShaderQuality != GameOptions.GenericHighMedLowOption.VERY_LOW && (bool)m_player && m_player.IsVisible && !m_player.IsFalling)
@@ -118,7 +120,7 @@ namespace Burger
             }
             if ((bool)instanceVFX)
             {
-                instanceVFX.GetComponent<tk2dSpriteAnimator>().PlayAndDestroyObject("rage_face_vfx_out");
+                instanceVFX.GetComponent<tk2dSpriteAnimator>().PlayAndDestroyObject(rageVFX);
             }
             m_player.ownerlessStatModifiers.Remove(damageStat);
             m_player.stats.RecalculateStats(m_player);
