@@ -1,5 +1,5 @@
 # B.U.R.G.E.R.
-### An in-development Enter the Gungeon mod
+### An Enter the Gungeon mod
 > B.U.R.G.E.R. stands for Barrier Utilizing Reinforcement Generating Energy Reserves
 
 ![burger shield showcase](https://github.com/StarFallenJax/B.U.R.G.E.R./assets/93849152/5da1afeb-2ac6-48b3-9c67-5c28a683bbf9)
